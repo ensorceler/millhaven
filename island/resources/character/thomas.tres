@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://c0fqca17n2i60"]
+
+[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_xctgr"]
+
+[resource]
+script = ExtResource("1_xctgr")
+character_id = "thomas"
+character_name = "Thomas"
+character_description = "Thomas is the hardworking farmer who sustains the island's livelihood through crops and livestock. He's a dawn-to-dusk laborer with calloused hands and practical wisdom. Despite his demanding schedule, Thomas is warm and sociable, often visiting the Tavern to decompress. He's the backbone of island survival but worries about crop failures and seasons"
+profession = "FARMER"
+job_description = "Thomas manages the Farmstead, overseeing crop cultivation across multiple fields. He tends to vegetables, grains, and maintains livestock (chickens, sheep, goats). He decides planting schedules, manages crop rotations, handles harvesting, and rations food supplies to other islanders. He monitors soil health, prepares fields seasonally, and deals with pest problems and crop failures"
+daily_routine = "Thomas wakes before dawn to tend livestock and check field conditions. He spends mornings on planting, weeding, watering crops depending on season. Afternoons involve heavy physical labor — harvesting, hauling, repairs to fences and structures. Late afternoons he processes food for storage (drying, preserving). Evenings he visits the Tavern to socialize and relax, often trading produce for Elena's meals."
+starting_location_id = "farmstead"
+metadata/_custom_type_script = "uid://cfc0hj6r18rcp"

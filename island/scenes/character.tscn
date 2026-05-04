@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bdi3dr06wn442"]
+
+[ext_resource type="Script" uid="uid://bte0s3v6jkjjr" path="res://scripts/character/character.gd" id="1_rkhd4"]
+[ext_resource type="SpriteFrames" uid="uid://ctdos87pou2lc" path="res://resources/character/spriteframes/john/john_accessory.tres" id="2_0dpix"]
+[ext_resource type="SpriteFrames" uid="uid://jc182x8gs8e3" path="res://resources/character/spriteframes/john/john_body.tres" id="2_0lw5n"]
+[ext_resource type="SpriteFrames" uid="uid://ct51tjf7tj0xl" path="res://resources/character/spriteframes/john/john_hair.tres" id="3_2cgup"]
+[ext_resource type="Script" uid="uid://8rw2iewqqawp" path="res://scripts/character/state_machine.gd" id="3_lrhn5"]
+[ext_resource type="SpriteFrames" uid="uid://v5li2s7me5ay" path="res://resources/character/spriteframes/john/john_clothing.tres" id="4_a5ia6"]
+[ext_resource type="Script" uid="uid://cdbk7wu3php50" path="res://scripts/character/idle_state.gd" id="4_dp8ca"]
+[ext_resource type="Script" uid="uid://qmg2on34afm7" path="res://scripts/character/walk_state.gd" id="5_0lw5n"]
+[ext_resource type="Script" uid="uid://cljqlfgjnaxms" path="res://scripts/character/walk_as_agent.gd" id="6_0lw5n"]
+[ext_resource type="Script" uid="uid://dpddba5ixpglr" path="res://scripts/character/agent_brain.gd" id="6_2hyy3"]
+[ext_resource type="Resource" uid="uid://8oqwjb0fpgwp" path="res://resources/character/john.tres" id="7_irmqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lw5n"]
+size = Vector2(12.5, 12.5)
+
+[node name="Agent" type="CharacterBody2D" unique_id=153662479 groups=["agent"]]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_rkhd4")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=415506078]
+position = Vector2(0, -6.25)
+shape = SubResource("RectangleShape2D_0lw5n")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="Accessory" type="AnimatedSprite2D" parent="." unique_id=1736475518]
+position = Vector2(0, -11.999996)
+scale = Vector2(0.9999997, 0.9999997)
+sprite_frames = ExtResource("2_0dpix")
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1074180934]
+position = Vector2(0, -11.999999)
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = ExtResource("2_0lw5n")
+animation = &"idle_front"
+
+[node name="Hair" type="AnimatedSprite2D" parent="." unique_id=429252001]
+position = Vector2(0, -17.5)
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = ExtResource("3_2cgup")
+animation = &"idle_front"
+
+[node name="Clothing" type="AnimatedSprite2D" parent="." unique_id=1688693229]
+position = Vector2(0, -8.749999)
+sprite_frames = ExtResource("4_a5ia6")
+animation = &"idle_back"
+
+[node name="StateMachine" type="Node" parent="." unique_id=1304014819 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_lrhn5")
+initial_state = NodePath("IDLE")
+
+[node name="IDLE" type="Node" parent="StateMachine" unique_id=1994784204]
+script = ExtResource("4_dp8ca")
+
+[node name="WALK" type="Node" parent="StateMachine" unique_id=125679020]
+script = ExtResource("5_0lw5n")
+
+[node name="WALK_AS_AGENT" type="Node" parent="StateMachine" unique_id=967878893]
+script = ExtResource("6_0lw5n")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=481508552]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.97399706, 0, 0.18184921, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2002069131]
+zoom = Vector2(3, 3)
+
+[node name="AgentBrain" type="Node" parent="." unique_id=1035224491]
+script = ExtResource("6_2hyy3")
+character_data = ExtResource("7_irmqu")
+
+[connection signal="arrived_at_destination" from="AgentBrain" to="StateMachine" method="_on_agent_brain_arrived_at_destination"]
+[connection signal="destination_set" from="AgentBrain" to="StateMachine" method="_on_agent_brain_destination_set"]

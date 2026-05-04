@@ -1,0 +1,20 @@
+
+.DS_Store
+
+# Godot related 
+island/.godot/
+island/android/
+
+island/assets/
+
+
+
+
+#sim related 
+sim/.env
+sim/target
+
+
+
+
+

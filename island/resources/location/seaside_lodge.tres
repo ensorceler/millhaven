@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://cuamwmfle4ycs"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_b863f"]
+
+[resource]
+script = ExtResource("1_b863f")
+id = "seasidelodge"
+display_name = "Seaside Lodge"
+description = "Seaside Lodge "
+entry_tile = Vector2i(903, -150)
+metadata/_custom_type_script = "uid://02dyedxm0uph"

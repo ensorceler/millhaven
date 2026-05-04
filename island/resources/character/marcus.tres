@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://5oeqkliyvw2q"]
+
+[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_2ba70"]
+
+[resource]
+script = ExtResource("1_2ba70")
+character_id = "marcus"
+character_name = "Marcus"
+character_description = "Marcus is the island's primary craftsperson, blacksmith, and tradesman. Skilled with his hands and sharp with business sense, Marcus makes and repairs tools, equipment, and household items. He's quiet but thoughtful, preferring to let his work speak for itself. He's ambitious about expanding his business and influence on the island"
+profession = "CRAFTSPERSON"
+job_description = "Marcus operates the Workshop, crafting and repairing metal tools, wooden implements, and household goods. He smiths tools for farming, fishing, and other work. He takes custom orders from residents and negotiates fair prices. He trades finished goods with other islands or merchants. He mentors apprentices occasionally. He maintains the Workshop's equipment and materials inventory. He buys raw materials from suppliers and manages workshop finances."
+daily_routine = "Marcus wakes early to heat the smithy forge and prepare materials. He spends mornings on custom orders — smithing, welding, shaping metal. Afternoons involve repairs for island residents and finishing work on commissioned pieces. He negotiates trades and business with customers throughout the day. Late afternoons he stocks materials, cleans the workshop, and plans next projects. Evenings he visits the Tavern to socialize and discuss business opportunities with other residents."
+starting_location_id = "workshop"
+metadata/_custom_type_script = "uid://cfc0hj6r18rcp"

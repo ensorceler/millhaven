@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AgentSchedule" format=3 uid="uid://5aolfkcyhmx2"]
+
+[ext_resource type="Script" uid="uid://cw80ekg3bonvp" path="res://scripts/resource_script/agent_schedule.gd" id="1_j05yx"]
+
+[resource]
+script = ExtResource("1_j05yx")
+metadata/_custom_type_script = "uid://cw80ekg3bonvp"

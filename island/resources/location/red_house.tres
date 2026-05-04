@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://bwf15q1pv2y7x"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_xq4mw"]
+
+[resource]
+script = ExtResource("1_xq4mw")
+id = "red_residence"
+display_name = "Red House"
+description = "Red House"
+entry_tile = Vector2i(329, 16)
+metadata/_custom_type_script = "uid://02dyedxm0uph"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://ci1f4lykn4ana"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_o8biv"]
+
+[resource]
+script = ExtResource("1_o8biv")
+id = "windmill"
+display_name = "WindMill Research Center"
+description = "WindMill Research Center is a place to do heavy work and also maintain the energy output of our island. "
+zone = "NORTH"
+center_tile = Vector2i(652, -250)
+entry_tile = Vector2i(420, -290)
+activities = Array[String](["Research"])
+metadata/_custom_type_script = "uid://02dyedxm0uph"

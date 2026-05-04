@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cb2p7nyswtknr"]
+
+[ext_resource type="Script" uid="uid://dpgav5n6jradk" path="res://scripts/location_zone.gd" id="1_i5lek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5lek"]
+radius = 16.0
+
+[node name="LocationZone" type="Area2D" unique_id=336596127]
+script = ExtResource("1_i5lek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360353996]
+shape = SubResource("CircleShape2D_i5lek")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

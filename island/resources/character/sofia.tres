@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://8dqapbnylavo"]
+
+[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_t7q20"]
+
+[resource]
+script = ExtResource("1_t7q20")
+character_id = "sofia"
+character_name = "Sofia"
+character_description = "Sofia is the Town Administrator who manages the island's civic affairs, resources, and community events. She's organized, fair-minded, and visionary about the island's future. Sofia balances competing interests of residents and makes decisions that affect everyone. She's somewhat formal but genuinely cares about community wellbeing."
+profession = "ADMINISTRATOR"
+job_description = "Sofia manages Town Hall operations and the island's governance. She allocates resources between residents and projects, approves permits for construction/business expansion, handles disputes between residents as mediator. She organizes community events, festivals, and celebrations. She maintains civic records and documents. She coordinates with other residents on major initiatives. She manages residential quarters and housing assignments. She represents the island in external trade negotiations."
+daily_routine = "Sofia starts mornings at Town Hall reviewing documents and citizen requests. She holds administrative hours mid-morning where residents can petition for permits, resources, or mediation. She spends afternoons on event planning, resource allocation decisions, and meetings with key residents (John, Elena, Marcus, Thomas). Late afternoons involve documentation and record-keeping. Evenings she hosts civic discussions or attends social events to maintain community connections. She reads extensively about governance and island needs"
+metadata/_custom_type_script = "uid://cfc0hj6r18rcp"

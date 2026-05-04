@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AgentSchedule" format=3 uid="uid://dq3xiumffbavv"]
+
+[ext_resource type="Script" uid="uid://cw80ekg3bonvp" path="res://scripts/resource_script/agent_schedule.gd" id="1_4ja4j"]
+
+[resource]
+script = ExtResource("1_4ja4j")
+morning_location = "windmill"
+morning_activity = "idle"
+noon_location = "tavern"
+noon_activity = "idle"
+afternoon_location = "farmstead"
+afternoon_activity = "idle"
+evening_location = "townhall"
+evening_activity = "idle"
+night_location = "tavern"
+night_activity = "idle"
+metadata/_custom_type_script = "uid://cw80ekg3bonvp"

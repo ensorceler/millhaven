@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://8oqwjb0fpgwp"]
+
+[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_7spgu"]
+[ext_resource type="Resource" uid="uid://dq3xiumffbavv" path="res://resources/schedules/john_schedule.tres" id="1_m73ft"]
+
+[resource]
+script = ExtResource("1_7spgu")
+character_id = "john"
+character_name = "John"
+character_description = "John is the island's chief engineer and researcher stationed at the Windmill. He maintains the complex machinery that processes grain and powers essential systems for the entire island. A meticulous problem-solver with an obsessive attention to detail, John spends his days tinkering with improvements and documenting results. He's isolated by nature but generous with his knowledge to those who seek it."
+profession = "ENGINEER_RESEARCHER"
+job_description = "John maintains and operates the Windmill's grain processing machinery. He experiments with improved storage methods and processing techniques to maximize efficiency. He keeps detailed records of grain yields, mechanical failures, and experimental outcomes. He also troubleshoots any island-wide machinery issues and teaches others basic maintenance."
+daily_routine = "John wakes early to inspect the Windmill machinery before it starts operating. He spends mornings on preventive maintenance and checking for wear. Afternoons involve experimental grain processing trials and detailed note-taking. Evenings are spent documenting the day's results and planning improvements. He occasionally visits the Tavern in the evenings for social connection."
+starting_location_id = "windmill"
+schedule = ExtResource("1_m73ft")
+metadata/_custom_type_script = "uid://cfc0hj6r18rcp"

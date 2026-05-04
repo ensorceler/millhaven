@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://cqcss26vjpiud"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_6npkx"]
+
+[resource]
+script = ExtResource("1_6npkx")
+id = "farmstead"
+display_name = "Blue FarmHouse"
+description = "Blue FarmHouse"
+entry_tile = Vector2i(809, -435)
+activities = Array[String](["Farming"])
+metadata/_custom_type_script = "uid://02dyedxm0uph"

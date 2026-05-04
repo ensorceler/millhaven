@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://bho0pdg3jk4id"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_b1tqh"]
+
+[resource]
+script = ExtResource("1_b1tqh")
+id = "easternhouse"
+display_name = "Eastern House"
+description = "Eastern House, residential place near the beach etc. "
+entry_tile = Vector2i(881, -10)
+metadata/_custom_type_script = "uid://02dyedxm0uph"

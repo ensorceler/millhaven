@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://dwqx06owyw5v3"]
+
+[ext_resource type="Script" uid="uid://02dyedxm0uph" path="res://scripts/resource_script/location_data.gd" id="1_uxcva"]
+
+[resource]
+script = ExtResource("1_uxcva")
+id = "farmstorehouse"
+display_name = "Farm StoreHouse"
+description = "Farm StoreHouse
+"
+entry_tile = Vector2i(760, -340)
+metadata/_custom_type_script = "uid://02dyedxm0uph"
