@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://y3ugkymfe6x6"]
+
+[ext_resource type="Texture2D" uid="uid://bvu1qh1cgcosb" path="res://assets/ui/Modern_UI_Style_1.png" id="1_rc1id"]
+[ext_resource type="Script" uid="uid://bd18ddr2qusod" path="res://scripts/dialogue_box.gd" id="1_tm68y"]
+[ext_resource type="Theme" uid="uid://bywe6th5i75eh" path="res://resources/main_theme.tres" id="2_fu8b5"]
+[ext_resource type="Texture2D" uid="uid://bqd8hjan8uk76" path="res://assets/ui/Portrait_Generator/Skins/PG_Skin_2.png" id="3_hvmm2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0wdv"]
+atlas = ExtResource("3_hvmm2")
+region = Rect2(8, 8, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pehjr"]
+atlas = ExtResource("1_rc1id")
+region = Rect2(816, 271, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c26ww"]
+atlas = ExtResource("1_rc1id")
+region = Rect2(832, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhmkw"]
+atlas = ExtResource("1_rc1id")
+region = Rect2(848, 273, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvmm2"]
+atlas = ExtResource("1_rc1id")
+region = Rect2(148, 356, 9, 9)
+
+[node name="DialogueBox" type="Control" unique_id=1724365903]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -378.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_tm68y")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=1347652840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="DialogueBoxBackground" type="NinePatchRect" parent="HFlowContainer" unique_id=1674960157]
+custom_minimum_size = Vector2(700, 350)
+layout_mode = 2
+texture = ExtResource("1_rc1id")
+region_rect = Rect2(58, 129, 28, 29)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer/DialogueBoxBackground" unique_id=1795463401]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MainContainer" type="HBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer" unique_id=1363825724]
+layout_mode = 2
+
+[node name="AgentInformationContainer" type="VBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer" unique_id=1384997440]
+layout_mode = 2
+
+[node name="FaceContainer" type="NinePatchRect" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentInformationContainer" unique_id=1646063548]
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+texture = ExtResource("1_rc1id")
+region_rect = Rect2(58, 129, 28, 29)
+
+[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentInformationContainer/FaceContainer" unique_id=2139040826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="TextureRect" type="TextureRect" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentInformationContainer/FaceContainer/MarginContainer" unique_id=1317626032]
+layout_mode = 2
+texture = SubResource("AtlasTexture_p0wdv")
+
+[node name="AgentName" type="Label" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentInformationContainer" unique_id=1379494152]
+layout_mode = 2
+theme = ExtResource("2_fu8b5")
+theme_override_font_sizes/font_size = 30
+text = "JOHN"
+horizontal_alignment = 1
+
+[node name="AgentDialoguesContainer" type="VBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer" unique_id=440672566]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DialogueBox" type="NinePatchRect" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer" unique_id=968397134]
+custom_minimum_size = Vector2(450, 250)
+layout_mode = 2
+texture = ExtResource("1_rc1id")
+region_rect = Rect2(51, 80, 42, 16)
+
+[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer/DialogueBox" unique_id=915343555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer/DialogueBox/MarginContainer" unique_id=466268505]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_fu8b5")
+text = "Hello here"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer" unique_id=448850805]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer/HBoxContainer" unique_id=958538807]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_fu8b5")
+placeholder_text = "SAY SOMETHING to AGENT..."
+
+[node name="OKButton" type="TextureButton" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer/HBoxContainer" unique_id=176171538]
+custom_minimum_size = Vector2(48, 24)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_pehjr")
+texture_pressed = SubResource("AtlasTexture_c26ww")
+texture_focused = SubResource("AtlasTexture_yhmkw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/AgentDialoguesContainer/HBoxContainer/OKButton" unique_id=491723350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fu8b5")
+theme_override_colors/font_color = Color(0.8319139, 0.99086004, 0.9230301, 1)
+text = "Ok"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer" unique_id=458030896]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/VBoxContainer" unique_id=541284793]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CloseButton" type="TextureButton" parent="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/VBoxContainer/VBoxContainer" unique_id=172734276]
+custom_minimum_size = Vector2(20, 30)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_hvmm2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="HFlowContainer/DialogueBoxBackground/MarginContainer/MainContainer/VBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dg4vybppq71wq"]
+
+[ext_resource type="Texture2D" uid="uid://1h5vimo742de" path="res://assets/ui/medieval.png" id="1_4jimp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu1dw"]
+atlas = ExtResource("1_4jimp")
+region = Rect2(50, 738, 45, 29)
+
+[node name="MenuOption" type="TextureButton" unique_id=673948717]
+custom_minimum_size = Vector2(150, 100)
+offset_right = 150.0
+offset_bottom = 100.0
+texture_normal = SubResource("AtlasTexture_hu1dw")
+ignore_texture_size = true
+stretch_mode = 0

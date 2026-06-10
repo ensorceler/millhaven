@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_w15gi")
+morning_location = "townhall"
+morning_activity = "socializing"
 metadata/_custom_type_script = "uid://cw80ekg3bonvp"

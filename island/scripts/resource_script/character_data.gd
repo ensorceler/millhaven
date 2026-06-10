@@ -31,6 +31,7 @@ class_name CharacterData
 @export var starting_location_id: String = ""
 @export var health: int = 100
 @export var energy: int = 100
+@export var speed: int = 50
 @export var schedule:AgentSchedule
 
 # ── Relationships ───────────────────────────────────

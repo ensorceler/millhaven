@@ -1,3 +1,19 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://ctdos87pou2lc"]
 
 [resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"check_smartphone_front",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sit_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sit_right",
+"speed": 5.0
+}]

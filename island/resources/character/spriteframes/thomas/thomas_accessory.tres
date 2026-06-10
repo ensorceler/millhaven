@@ -1,3 +1,14 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://i3molwuh7dh0"]
 
 [resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"check_smartphone_front",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

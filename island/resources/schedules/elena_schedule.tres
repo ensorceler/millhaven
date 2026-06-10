@@ -4,4 +4,14 @@
 
 [resource]
 script = ExtResource("1_1dll2")
+morning_location = "tavern"
+morning_activity = "cooking"
+noon_location = "tavern"
+noon_activity = "socializing"
+afternoon_location = "tavern"
+afternoon_activity = "socializing"
+evening_location = "townhall"
+evening_activity = "socializing"
+night_location = "easternhouse"
+night_activity = "sleeping"
 metadata/_custom_type_script = "uid://cw80ekg3bonvp"

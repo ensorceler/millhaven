@@ -7,6 +7,7 @@ class_name LocationData
 @export_multiline var description: String = ""
 
 # ── World Position ─────────────────────────────────────────
+@export var world_scene:String=""
 @export var zone: String = ""
 @export var center_tile: Vector2i = Vector2i.ZERO
 @export var entry_tile: Vector2i = Vector2i.ZERO

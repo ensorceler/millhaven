@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cl5nrxkhi5ew1"]
+
+[ext_resource type="Script" uid="uid://dat41snr63n0u" path="res://scripts/eye_icon.gd" id="1_2bul5"]
+[ext_resource type="Texture2D" uid="uid://bvu1qh1cgcosb" path="res://assets/ui/Modern_UI_Style_1.png" id="2_fcreq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8opva"]
+atlas = ExtResource("2_fcreq")
+region = Rect2(432.9003, 65.35929, 14.37146, 13.526054)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8opva"]
+radius = 14.035668
+
+[node name="EyeIcon" type="Node2D" unique_id=2012982352]
+script = ExtResource("1_2bul5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=433595680]
+position = Vector2(11, 10)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_8opva")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=992574019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=2016059025]
+position = Vector2(11, 10)
+shape = SubResource("CircleShape2D_8opva")
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]
+[connection signal="mouse_entered" from="ClickArea" to="." method="_on_click_area_mouse_entered"]
+[connection signal="mouse_exited" from="ClickArea" to="." method="_on_click_area_mouse_exited"]

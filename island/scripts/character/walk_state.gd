@@ -5,12 +5,18 @@ class_name CharacterWalkState
 
 func enter()->void: 
 	character.play_animation("walk")
-	print("enter walk")
+	#print("enter walk")
 	
 func exit()->void: 
-	print("exit walk")
+	#print("exit walk")
+	pass
 
 func physics_update(delta:float)->void:
+	
+	if character.type!=Character.TYPE.PLAYER:
+		print("[AGENT TRYING TO WALK]")
+		return
+		
 	var direction=Vector2.ZERO
 	
 	if Input.is_action_pressed("left"):

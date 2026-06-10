@@ -8,5 +8,6 @@ id = "townhall"
 display_name = "TownHall"
 description = "Townhall
 "
+world_scene = "island"
 entry_tile = Vector2i(616, -21)
 metadata/_custom_type_script = "uid://02dyedxm0uph"

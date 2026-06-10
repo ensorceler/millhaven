@@ -1,13 +1,24 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dmweqpwm2s8ot"]
 
-[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_ru6pj"]
+[ext_resource type="Resource" uid="uid://d38dgylw4sewn" path="res://resources/schedules/elena_schedule.tres" id="1_4aqku"]
+[ext_resource type="Script" uid="uid://cfc0hj6r18rcp" path="res://scripts/resource_script/character_data.gd" id="1_uhi7h"]
+[ext_resource type="SpriteFrames" uid="uid://cav55o5o22e27" path="res://resources/character/spriteframes/elena/elena_accessory.tres" id="2_4aqku"]
+[ext_resource type="SpriteFrames" uid="uid://h1ar5wefoobu" path="res://resources/character/spriteframes/elena/elena_body.tres" id="3_mkkus"]
+[ext_resource type="SpriteFrames" uid="uid://dv630dx2050m5" path="res://resources/character/spriteframes/elena/elena_clothing.tres" id="4_xwcxs"]
+[ext_resource type="SpriteFrames" uid="uid://dxkd12ophgjcf" path="res://resources/character/spriteframes/elena/elena_hair.tres" id="5_tg7m3"]
 
 [resource]
-script = ExtResource("1_ru6pj")
+script = ExtResource("1_uhi7h")
 character_id = "elena"
 character_name = "Elena"
 character_description = "Elena is the warm, observant owner of the Tavern/Inn and the island's best cook. She's the social hub of the island — everyone knows her business and she knows theirs. Elena provides meals, lodging, and most importantly, a gathering space for the community. She's a natural gossip, matchmaker, and counselor rolled into one"
 profession = "TAVERN_KEEPER"
 job_description = "Elena owns and operates the Tavern/Inn. She cooks meals for residents and visitors, manages inventory of food and drink supplies. She maintains the inn's rooms for travelers and temporary residents. She serves as unofficial information hub — gathering and sharing news, facilitating introductions, and creating a safe gathering space. She hosts occasional gatherings and festivals. She manages tavern finances and trades with suppliers"
 daily_routine = "Elena wakes to prepare breakfast for overnight guests. She plans meals based on Thomas's produce and current ingredient supplies. She cooks throughout the day — breakfasts, lunches, dinners. Mid-mornings involve cleaning rooms and managing the inn. Afternoons she greets arriving customers, chats with regulars, gossips about island happenings. Evenings are peak tavern time — serving food and drinks, facilitating conversations, playing mediator in disputes. Nights she records finances and prepares next day's menu."
+sprite_body = ExtResource("3_mkkus")
+sprite_clothing = ExtResource("4_xwcxs")
+sprite_hair = ExtResource("5_tg7m3")
+sprite_accessory = ExtResource("2_4aqku")
+speed = 40
+schedule = ExtResource("1_4aqku")
 metadata/_custom_type_script = "uid://cfc0hj6r18rcp"

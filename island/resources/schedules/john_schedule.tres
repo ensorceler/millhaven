@@ -4,14 +4,14 @@
 
 [resource]
 script = ExtResource("1_4ja4j")
-morning_location = "windmill"
-morning_activity = "idle"
+morning_location = "tavern"
+morning_activity = "socializing"
 noon_location = "tavern"
-noon_activity = "idle"
-afternoon_location = "farmstead"
-afternoon_activity = "idle"
+noon_activity = "socializing"
+afternoon_location = "townhall"
+afternoon_activity = "socializing"
 evening_location = "townhall"
-evening_activity = "idle"
+evening_activity = "socializing"
 night_location = "tavern"
-night_activity = "idle"
+night_activity = "socializing"
 metadata/_custom_type_script = "uid://cw80ekg3bonvp"

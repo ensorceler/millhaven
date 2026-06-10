@@ -7,7 +7,8 @@ var character: Character=null
 
 
 func _init() -> void:
-	print("init method in state",self)
+	#print("init method in state",self)
+	pass
 
 # Called when entering the state
 func enter() -> void:

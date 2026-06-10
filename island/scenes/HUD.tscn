@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://clj2jsmdr16vq"]
+
+[ext_resource type="Script" uid="uid://bnmnkrmre5ebq" path="res://scripts/hud.gd" id="1_qpvh6"]
+[ext_resource type="Texture2D" uid="uid://bvu1qh1cgcosb" path="res://assets/ui/Modern_UI_Style_1.png" id="2_fls4u"]
+[ext_resource type="Texture2D" uid="uid://8i6gol270shq" path="res://assets/ui/Portrait_Generator/Skins/PG_Skin_3.png" id="3_1etfg"]
+[ext_resource type="Theme" uid="uid://bywe6th5i75eh" path="res://resources/main_theme.tres" id="4_7hsmw"]
+[ext_resource type="PackedScene" uid="uid://y3ugkymfe6x6" path="res://scenes/dialogue_box.tscn" id="5_nysna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hsmw"]
+atlas = ExtResource("3_1etfg")
+region = Rect2(296, 8, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1etfg"]
+atlas = ExtResource("2_fls4u")
+region = Rect2(226, 67, 11, 11)
+
+[node name="HUD" type="CanvasLayer" unique_id=2051062057]
+script = ExtResource("1_qpvh6")
+
+[node name="StatusBar" type="Control" parent="." unique_id=1481360316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StatusBar" unique_id=1950828550]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 309.0
+offset_bottom = 124.0
+texture = ExtResource("2_fls4u")
+region_rect = Rect2(13, 367.73685, 22.130428, 16.263153)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="StatusBar/NinePatchRect" unique_id=580715913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="UserDetailContainer" type="HFlowContainer" parent="StatusBar/NinePatchRect/MarginContainer" unique_id=1257801606]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+
+[node name="FACE" type="TextureRect" parent="StatusBar/NinePatchRect/MarginContainer/UserDetailContainer" unique_id=1817904963]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7hsmw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusBar/NinePatchRect/MarginContainer/UserDetailContainer" unique_id=191302192]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatusBar/NinePatchRect/MarginContainer/UserDetailContainer/VBoxContainer" unique_id=1308539424]
+layout_mode = 2
+
+[node name="Clock" type="TextureRect" parent="StatusBar/NinePatchRect/MarginContainer/UserDetailContainer/VBoxContainer/HBoxContainer" unique_id=1370340644]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_1etfg")
+
+[node name="TimeLabel" type="Label" parent="StatusBar/NinePatchRect/MarginContainer/UserDetailContainer/VBoxContainer/HBoxContainer" unique_id=1467606433]
+layout_mode = 2
+theme = ExtResource("4_7hsmw")
+theme_override_font_sizes/font_size = 30
+text = "16:00"
+
+[node name="DialogueBox" parent="." unique_id=1724365903 instance=ExtResource("5_nysna")]
+offset_top = -363.0
+
+[node name="InteractionAlert" type="Control" parent="." unique_id=317567745]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Container" type="HBoxContainer" parent="InteractionAlert" unique_id=1270650074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="InteractionAlert/Container" unique_id=244119326]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("2_fls4u")
+region_rect = Rect2(13, 368, 22, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InteractionMessageLabel" type="Label" parent="InteractionAlert/Container/NinePatchRect" unique_id=869642661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_7hsmw")
+theme_override_font_sizes/font_size = 34
+text = "Press E to interact"
+horizontal_alignment = 1

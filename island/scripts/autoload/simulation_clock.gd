@@ -51,10 +51,10 @@ const TIME_BLOCK_START_HOURS: Dictionary = {
 # How many in-game minutes pass per real second
 # Default: 1 real second = 1 in-game minute
 # Change at runtime or in Inspector to speed up/slow down simulation
-@export var time_scale: float = 1.0
+@export var time_scale: float = 10.0
 
 # Starting time — dawn
-@export var start_hour: int = 6
+@export var start_hour: int = 8
 @export var start_minute: int = 0
 
 # ── Internal State ────────────────────────────────────────────────────────────
@@ -76,6 +76,8 @@ func _ready() -> void:
 	current_hour   = start_hour
 	current_minute = start_minute
 	current_block  = _calculate_block(current_hour)
+	time_block_changed.emit(TimeBlock.EVENING, TimeBlock.MORNING)
+
 	print("[SimulationClock] Started at %s on Day %d" % [get_time_string(), current_day])
 
 

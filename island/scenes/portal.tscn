@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://qeqbxqxs8x6h"]
+
+[ext_resource type="Script" uid="uid://cs7uh3hu0g2wy" path="res://scripts/portal.gd" id="1_v0xau"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppl40"]
+radius = 13.0
+
+[node name="Portal" type="Area2D" unique_id=637885941]
+collision_mask = 3
+script = ExtResource("1_v0xau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1342330262]
+shape = SubResource("CircleShape2D_ppl40")
+
+[node name="ReturnSpawnPoint" type="Marker2D" parent="." unique_id=109666321]
+position = Vector2(0, 16)

@@ -7,5 +7,6 @@ script = ExtResource("1_l0vwh")
 id = "4"
 display_name = "Farm Workshop"
 description = "Farm Workshop"
+world_scene = "island"
 entry_tile = Vector2i(616, -403)
 metadata/_custom_type_script = "uid://02dyedxm0uph"

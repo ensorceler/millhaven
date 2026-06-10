@@ -7,6 +7,7 @@ script = ExtResource("1_o8biv")
 id = "windmill"
 display_name = "WindMill Research Center"
 description = "WindMill Research Center is a place to do heavy work and also maintain the energy output of our island. "
+world_scene = "island"
 zone = "NORTH"
 center_tile = Vector2i(652, -250)
 entry_tile = Vector2i(420, -290)

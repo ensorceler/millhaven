@@ -8,5 +8,6 @@ id = "tavern"
 display_name = "Tavern Inn"
 description = "Tavern/Inn for our island, eat, drink and socialize here. 
 "
+world_scene = "island"
 entry_tile = Vector2i(185, -3)
 metadata/_custom_type_script = "uid://02dyedxm0uph"

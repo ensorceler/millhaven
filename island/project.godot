@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="island"
-run/main_scene="uid://boaf7hjbsvi4q"
+run/main_scene="uid://d3t8xcv7hqw5g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,10 @@ LocationManager="*uid://ch7isv6vyokyy"
 SceneManager="*uid://ceiac2kdm7unj"
 ApiClient="*uid://bh4tnxn4cvsho"
 SimulationClock="*uid://jv8uiq3focgx"
+CCTVManager="*uid://box7wyrglc6iv"
+AgentStateRegistry="*uid://dul2piofpsewt"
+SimLoop="*uid://c4i581la267pw"
+Eventbus="*uid://jouk3mfw4ic2"
 
 [debug]
 
@@ -42,6 +46,9 @@ navigation_tiles=""
 nav_region=""
 agent=""
 island_map=""
+activity_point=""
+agent_spawner=""
+portal=""
 
 [input]
 
@@ -74,9 +81,14 @@ left_click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(1058, 52),"global_position":Vector2(1077, 148),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
-player_interact={
+interact={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+right_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(534, 32),"global_position":Vector2(553, 128),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

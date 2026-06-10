@@ -38,7 +38,7 @@ func physics_update(delta:float)->void:
 
 func handle_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if Input.is_action_just_pressed("left_click"):
+		if Input.is_action_just_pressed("right_click"):
 			var target = character.get_global_mouse_position()
 			character.nav_agent.target_position = target
 

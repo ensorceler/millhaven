@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://dmti81kosslld"]
 
 [ext_resource type="TileSet" uid="uid://cwstd0fc4xyf5" path="res://resources/interiors_tileset.tres" id="1_ydnal"]
-[ext_resource type="Script" uid="uid://dpgav5n6jradk" path="res://scripts/location_zone.gd" id="2_8dirj"]
 [ext_resource type="Script" uid="uid://djgsy63p4mhhw" path="res://scripts/character/spawner.gd" id="2_gwbas"]
+[ext_resource type="PackedScene" uid="uid://woininb7max" path="res://scenes/activity_point.tscn" id="4_gwbas"]
+[ext_resource type="PackedScene" uid="uid://qeqbxqxs8x6h" path="res://scenes/portal.tscn" id="4_yyr65"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i5lek"]
-radius = 16.0
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gwbas"]
+vertices = PackedVector2Array(210.8125, 16.890625, 236.85156, 16.117188, 235.85938, 46, 209.79688, 37, 3.96875, 47.898438, 76.84375, 46.101563, 74.859375, 99.75781, 3.03125, 172.9375, 84, 171.95313, 99.84375, 101.22656, 108, 173, 108, 187.11719, 84, 187.86719, 428, 46, 428, 173, 178.04688, 52.078125, 101.84375, 50.101563, 182.07031, 37)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(10, 11, 12, 8, 9), PackedInt32Array(2, 13, 14, 10, 9), PackedInt32Array(3, 2, 9, 15), PackedInt32Array(9, 16, 15), PackedInt32Array(3, 15, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 44, 81, 42, 79, 96, 96, 97, 98, 46, 175, 48, 179, 33, 206, 33, 207, 13, 241, 12, 240, 42, 335, 42, 432, 42, 432, 177, 112, 177, 112, 191, 80, 192, 80, 176, -1, 177)])
+agent_radius = 4.0
 
 [node name="Tavern" type="Node2D" unique_id=1270314796]
 
@@ -27,18 +31,58 @@ tile_set = ExtResource("1_ydnal")
 
 [node name="YSORT" type="Node2D" parent="." unique_id=890882021]
 y_sort_enabled = true
+
+[node name="AgentSpawner" type="Node" parent="." unique_id=1798431287 groups=["agent_spawner"]]
 script = ExtResource("2_gwbas")
+current_location = "tavern"
 
-[node name="EntryPoint" type="Marker2D" parent="." unique_id=1677359278]
-position = Vector2(95, 165)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1079456873]
+position = Vector2(197, 87)
+zoom = Vector2(1.8, 1.8)
 
-[node name="ExitZone" type="Area2D" parent="." unique_id=336596127]
-position = Vector2(95, 186)
-script = ExtResource("2_8dirj")
-goto_scene_path = "res://scenes/island.tscn"
+[node name="ActivityPoints" type="Node" parent="." unique_id=322672486]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitZone" unique_id=1360353996]
-shape = SubResource("CircleShape2D_i5lek")
+[node name="Socializing_1" parent="ActivityPoints" unique_id=2062033345 groups=["activity_point"] instance=ExtResource("4_gwbas")]
+position = Vector2(305, 76)
+activity = "socializing"
+character_animation = "check_smartphone"
+character_face_direction = "front"
 
-[connection signal="body_entered" from="ExitZone" to="ExitZone" method="_on_body_entered"]
-[connection signal="body_exited" from="ExitZone" to="ExitZone" method="_on_body_exited"]
+[node name="Socializing_2" parent="ActivityPoints" unique_id=87237940 groups=["activity_point"] instance=ExtResource("4_gwbas")]
+position = Vector2(284, 92)
+activity = "socializing"
+character_animation = "sit"
+character_face_direction = "right"
+
+[node name="Cooking_1" parent="ActivityPoints" unique_id=1630347229 groups=["activity_point"] instance=ExtResource("4_gwbas")]
+position = Vector2(71, 62)
+activity = "cooking"
+character_animation = "idle"
+character_face_direction = "right"
+
+[node name="Default" parent="ActivityPoints" unique_id=1787041244 instance=ExtResource("4_gwbas")]
+position = Vector2(365, 71)
+activity = "default"
+character_animation = "sit"
+character_face_direction = "right"
+
+[node name="Zones" type="Node" parent="." unique_id=1923959387]
+
+[node name="EntryPoint" type="Marker2D" parent="Zones" unique_id=421001437]
+position = Vector2(40, 168)
+
+[node name="TavernDoor" parent="Zones" unique_id=637885941 groups=["portal"] instance=ExtResource("4_yyr65")]
+position = Vector2(95, 184)
+portal_id = "tavern_door"
+target_scene = "res://scenes/island.tscn"
+target_location_id = "island"
+exit_portal = true
+
+[node name="ReturnSpawnPoint" parent="Zones/TavernDoor" index="1" unique_id=109666321]
+position = Vector2(0, -26)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1021793187 groups=["nav_region"]]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_gwbas")
+
+[editable path="Zones/TavernDoor"]

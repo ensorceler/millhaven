@@ -1,19 +1,20 @@
-
+# General
 .DS_Store
+*.tmp
 
 # Godot related 
 island/.godot/
 island/android/
 
 island/assets/
-
-
+island/*.import
+island/exports/
+island/export_presets.cfg
 
 
 #sim related 
 sim/.env
 sim/target
-
 
 
 

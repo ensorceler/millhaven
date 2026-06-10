@@ -1,23 +1,31 @@
 [gd_scene format=3 uid="uid://bdi3dr06wn442"]
 
 [ext_resource type="Script" uid="uid://bte0s3v6jkjjr" path="res://scripts/character/character.gd" id="1_rkhd4"]
-[ext_resource type="SpriteFrames" uid="uid://ctdos87pou2lc" path="res://resources/character/spriteframes/john/john_accessory.tres" id="2_0dpix"]
-[ext_resource type="SpriteFrames" uid="uid://jc182x8gs8e3" path="res://resources/character/spriteframes/john/john_body.tres" id="2_0lw5n"]
-[ext_resource type="SpriteFrames" uid="uid://ct51tjf7tj0xl" path="res://resources/character/spriteframes/john/john_hair.tres" id="3_2cgup"]
+[ext_resource type="SpriteFrames" uid="uid://i3molwuh7dh0" path="res://resources/character/spriteframes/thomas/thomas_accessory.tres" id="3_50cep"]
 [ext_resource type="Script" uid="uid://8rw2iewqqawp" path="res://scripts/character/state_machine.gd" id="3_lrhn5"]
-[ext_resource type="SpriteFrames" uid="uid://v5li2s7me5ay" path="res://resources/character/spriteframes/john/john_clothing.tres" id="4_a5ia6"]
+[ext_resource type="SpriteFrames" uid="uid://jc182x8gs8e3" path="res://resources/character/spriteframes/john/john_body.tres" id="4_50cep"]
 [ext_resource type="Script" uid="uid://cdbk7wu3php50" path="res://scripts/character/idle_state.gd" id="4_dp8ca"]
 [ext_resource type="Script" uid="uid://qmg2on34afm7" path="res://scripts/character/walk_state.gd" id="5_0lw5n"]
+[ext_resource type="SpriteFrames" uid="uid://ct51tjf7tj0xl" path="res://resources/character/spriteframes/john/john_hair.tres" id="5_50cep"]
 [ext_resource type="Script" uid="uid://cljqlfgjnaxms" path="res://scripts/character/walk_as_agent.gd" id="6_0lw5n"]
 [ext_resource type="Script" uid="uid://dpddba5ixpglr" path="res://scripts/character/agent_brain.gd" id="6_2hyy3"]
+[ext_resource type="SpriteFrames" uid="uid://v5li2s7me5ay" path="res://resources/character/spriteframes/john/john_clothing.tres" id="6_8yvht"]
 [ext_resource type="Resource" uid="uid://8oqwjb0fpgwp" path="res://resources/character/john.tres" id="7_irmqu"]
+[ext_resource type="Script" uid="uid://b68efeprs58i4" path="res://scripts/character/sit_state.gd" id="8_7eonc"]
+[ext_resource type="Script" uid="uid://fvd4ugmts3xc" path="res://scripts/character/check_smartphone_state.gd" id="9_50cep"]
+[ext_resource type="Script" uid="uid://cdcdlox2xih3h" path="res://scripts/character/dialogue_detection.gd" id="14_8yvht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lw5n"]
 size = Vector2(12.5, 12.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_50cep"]
+radius = 26.0
+
 [node name="Agent" type="CharacterBody2D" unique_id=153662479 groups=["agent"]]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.9, 0.9)
+collision_layer = 2
 script = ExtResource("1_rkhd4")
+character_data = ExtResource("7_irmqu")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=415506078]
 position = Vector2(0, -6.25)
@@ -27,28 +35,38 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 [node name="Accessory" type="AnimatedSprite2D" parent="." unique_id=1736475518]
 position = Vector2(0, -11.999996)
 scale = Vector2(0.9999997, 0.9999997)
-sprite_frames = ExtResource("2_0dpix")
+sprite_frames = ExtResource("3_50cep")
+animation = &"check_smartphone_front"
 
 [node name="Body" type="AnimatedSprite2D" parent="." unique_id=1074180934]
 position = Vector2(0, -11.999999)
 scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = ExtResource("2_0lw5n")
-animation = &"idle_front"
+sprite_frames = ExtResource("4_50cep")
+animation = &"check_smartphone_front"
+frame_progress = 0.37933725
 
 [node name="Hair" type="AnimatedSprite2D" parent="." unique_id=429252001]
 position = Vector2(0, -17.5)
 scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = ExtResource("3_2cgup")
-animation = &"idle_front"
+sprite_frames = ExtResource("5_50cep")
+animation = &"check_smartphone_front"
+frame_progress = 0.36741745
 
 [node name="Clothing" type="AnimatedSprite2D" parent="." unique_id=1688693229]
 position = Vector2(0, -8.749999)
-sprite_frames = ExtResource("4_a5ia6")
-animation = &"idle_back"
+sprite_frames = ExtResource("6_8yvht")
+animation = &"check_smartphone_front"
+frame_progress = 0.145537
 
 [node name="StateMachine" type="Node" parent="." unique_id=1304014819 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_lrhn5")
 initial_state = NodePath("IDLE")
+
+[node name="SIT" type="Node" parent="StateMachine" unique_id=692990836]
+script = ExtResource("8_7eonc")
+
+[node name="CHECK_SMARTPHONE" type="Node" parent="StateMachine" unique_id=2087087551]
+script = ExtResource("9_50cep")
 
 [node name="IDLE" type="Node" parent="StateMachine" unique_id=1994784204]
 script = ExtResource("4_dp8ca")
@@ -71,7 +89,33 @@ zoom = Vector2(3, 3)
 
 [node name="AgentBrain" type="Node" parent="." unique_id=1035224491]
 script = ExtResource("6_2hyy3")
-character_data = ExtResource("7_irmqu")
+
+[node name="DialogueDetection" type="Area2D" parent="." unique_id=560071102]
+position = Vector2(0, -8.888889)
+scale = Vector2(1.1111112, 1.1111112)
+collision_mask = 3
+script = ExtResource("14_8yvht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueDetection" unique_id=1069605227]
+shape = SubResource("CircleShape2D_50cep")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1559476199]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=783775145]
+offset_left = -9.0
+offset_top = -32.0
+offset_right = 11.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 8
+text = "John"
+horizontal_alignment = 1
 
 [connection signal="arrived_at_destination" from="AgentBrain" to="StateMachine" method="_on_agent_brain_arrived_at_destination"]
 [connection signal="destination_set" from="AgentBrain" to="StateMachine" method="_on_agent_brain_destination_set"]
+[connection signal="body_entered" from="DialogueDetection" to="DialogueDetection" method="_on_body_entered"]
+[connection signal="body_exited" from="DialogueDetection" to="DialogueDetection" method="_on_body_exited"]

@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://cdpv2q1cr170q"]
+
+[ext_resource type="Script" uid="uid://dkj2fj7g6x10i" path="res://scripts/cctv_panel.gd" id="1_wlqrq"]
+[ext_resource type="Theme" uid="uid://bywe6th5i75eh" path="res://resources/main_theme.tres" id="2_y4gpl"]
+[ext_resource type="Texture2D" uid="uid://bvu1qh1cgcosb" path="res://assets/ui/Modern_UI_Style_1.png" id="3_rthkp"]
+
+[node name="CCTVPanel" type="Control" unique_id=923564054]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wlqrq")
+
+[node name="PanelBackground" type="NinePatchRect" parent="." unique_id=861524707]
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 500.0
+theme = ExtResource("2_y4gpl")
+texture = ExtResource("3_rthkp")
+region_rect = Rect2(58, 169, 28, 29)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelBackground" unique_id=327189970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelBackground/MarginContainer" unique_id=662573851]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="PanelBackground/MarginContainer/VBoxContainer" unique_id=306458564]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelBackground/MarginContainer/VBoxContainer/Header" unique_id=671176738]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="PanelBackground/MarginContainer/VBoxContainer/Header/HFlowContainer" unique_id=211851135]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TitleLabel" type="Label" parent="PanelBackground/MarginContainer/VBoxContainer/Header/HFlowContainer/HFlowContainer2" unique_id=1793003985]
+layout_mode = 2
+theme = ExtResource("2_y4gpl")
+theme_override_font_sizes/font_size = 24
+text = "INTERIOR SCENE"
+
+[node name="LiveIndicator" type="Label" parent="PanelBackground/MarginContainer/VBoxContainer/Header/HFlowContainer/HFlowContainer2" unique_id=981298212]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelBackground/MarginContainer/VBoxContainer/Header/HFlowContainer" unique_id=1979711421]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="PanelBackground/MarginContainer/VBoxContainer/Header/HFlowContainer/HFlowContainer" unique_id=541615085]
+layout_mode = 2
+theme = ExtResource("2_y4gpl")
+theme_type_variation = &"CloseButton"
+text = " X "
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelBackground/MarginContainer/VBoxContainer" unique_id=207999044]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_rthkp")
+region_rect = Rect2(58, 129, 28, 29)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="PanelBackground/MarginContainer/VBoxContainer/NinePatchRect" unique_id=1235470283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="PanelBackground/MarginContainer/VBoxContainer/NinePatchRect/SubViewportContainer" unique_id=484082261]
+handle_input_locally = false
+size = Vector2i(720, 435)
+render_target_update_mode = 4
+
+[node name="ResizeHandle" type="Control" parent="PanelBackground" unique_id=1170007458]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -734.0
+offset_top = -484.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 6

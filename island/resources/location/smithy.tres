@@ -7,5 +7,6 @@ script = ExtResource("1_ar7jk")
 id = "smithy"
 display_name = "Smithy"
 description = "Weapon and All kinds of tools etc. is available. etc. "
+world_scene = "island"
 entry_tile = Vector2i(840, -51)
 metadata/_custom_type_script = "uid://02dyedxm0uph"

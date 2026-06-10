@@ -7,5 +7,6 @@ script = ExtResource("1_xq4mw")
 id = "red_residence"
 display_name = "Red House"
 description = "Red House"
+world_scene = "island"
 entry_tile = Vector2i(329, 16)
 metadata/_custom_type_script = "uid://02dyedxm0uph"
